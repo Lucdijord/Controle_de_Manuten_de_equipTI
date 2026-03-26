@@ -1,5 +1,6 @@
 using ITMaintenanceManager.Data;
 using Microsoft.EntityFrameworkCore;
+using ITMaintenanceManager.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,10 @@ builder.Services.AddSwaggerGen();
 // SQLite
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<ITicketService, TicketService>();
+
+
 
 var app = builder.Build();
 
