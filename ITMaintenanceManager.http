@@ -1,0 +1,6 @@
+@ITMaintenanceManager_HostAddress = http://localhost:5001
+
+GET {{ITMaintenanceManager_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
