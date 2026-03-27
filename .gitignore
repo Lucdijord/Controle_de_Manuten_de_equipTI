@@ -1,8 +1,6 @@
-# Pastas de compilação do .NET (Não devemos subir código compilado)
 bin/
 obj/
 
-# Arquivos do Banco de Dados SQLite (Segurança de dados)
 *.db
 *.db-shm
 *.db-wal
