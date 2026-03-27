@@ -6,5 +6,6 @@ namespace ITMaintenanceManager.Services
     {
         Task<TicketResponseDTO?> CreateTicketAsync(TicketCreateDTO dto);
         Task<IEnumerable<TicketResponseDTO>> GetAllTicketsAsync();
+        Task<TicketResponseDTO?> GetTicketByIdAsync(int id);
     }
 }

@@ -54,5 +54,18 @@ namespace ITMaintenanceManager.Services
                     t.OpenDate, t.Deadline, t.Equipment!.Name))
                 .ToListAsync();
         }
+
+        public async Task<TicketResponseDTO?> GetTicketByIdAsync(int id)
+        {
+            var ticket = await _context.MaintenanceTickets
+                .Include(t => t.Equipment)
+                .FirstOrDefaultAsync(t => t.Id == id);
+
+            if (ticket == null) return null;
+
+            return new TicketResponseDTO(
+                ticket.Id, ticket.Title, ticket.Description, ticket.Status, 
+                ticket.OpenDate, ticket.Deadline, ticket.Equipment!.Name);
+        }
     }
 }
