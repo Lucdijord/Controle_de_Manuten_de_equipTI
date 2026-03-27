@@ -67,5 +67,26 @@ namespace ITMaintenanceManager.Services
                 ticket.Id, ticket.Title, ticket.Description, ticket.Status, 
                 ticket.OpenDate, ticket.Deadline, ticket.Equipment!.Name);
         }
+
+        public async Task<TicketResponseDTO?> CloseTicketAsync(int id)
+        {
+            var ticket = await _context.MaintenanceTickets
+                .Include(t => t.Equipment)
+                .FirstOrDefaultAsync(t => t.Id == id);
+
+            if (ticket == null) return null;
+
+            if (ticket.Status != "Concluído")
+            {
+                ticket.Status = "Concluído";
+                ticket.CloseDate = DateTime.Now; 
+                
+                await _context.SaveChangesAsync(); 
+            }
+
+            return new TicketResponseDTO(
+                ticket.Id, ticket.Title, ticket.Description, ticket.Status, 
+                ticket.OpenDate, ticket.Deadline, ticket.Equipment!.Name);
+        }
     }
 }

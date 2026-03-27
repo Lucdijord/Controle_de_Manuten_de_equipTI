@@ -49,5 +49,18 @@ namespace ITMaintenanceManager.Controllers
 
             return Ok(ticket);
         }
+
+        [HttpPut("{id}/close")]
+        public async Task<IActionResult> CloseTicket(int id)
+        {
+            var ticket = await _ticketService.CloseTicketAsync(id);
+
+            if (ticket == null)
+            {
+                return NotFound(new { message = "Chamado de manutenção não encontrado." });
+            }
+
+            return Ok(ticket);
+        }
     }
 }
