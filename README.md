@@ -16,6 +16,11 @@ PARA TESTAR O PROJETO:
 
 - Certifique-se de ter o [.NET 8 SDK](https://dotnet.microsoft.com/download) instalado;
 
-- Abra o seu terminal e clone o projeto:
-- git clone [https://github.com/Lucdijord/Controle_de_Manuten_de_equipTI](https://github.com/Lucdijord/Controle_de_Manuten_de_equipTI) 
-- cd SEU_REPOSITORIO/ITMaintenanceManager
+Abra o seu terminal e rode os seguintes comandos:
+
+- git clone [https://github.com/Lucdijord/Controle_de_Manuten_de_equipTI](https://github.com/Lucdijord/Controle_de_Manuten_de_equipTI);
+- cd SEU_REPOSITORIO/ITMaintenanceManager;
+- dotnet ef database update;
+- dotnet run;
+- Após executar os comandos, cole o endereço no navegador com a porta que o swagger entregar no terminal, por exemplo: http://localhost:5000/swagger;
+- Teste as rotas nessa sequência usando o ''Try it out'': POST /api/Equipment (Cadastra um equipamento) -> POST /api/MaintenanceTicket (Gera um chamado) -> PUT /api/MaintenanceTicket/{id}/close (Fecha um chamado).
