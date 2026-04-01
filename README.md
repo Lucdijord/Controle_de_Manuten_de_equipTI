@@ -17,5 +17,5 @@ PARA TESTAR O PROJETO:
 - Certifique-se de ter o [.NET 8 SDK](https://dotnet.microsoft.com/download) instalado;
 
 - Abra o seu terminal e clone o projeto:
-git clone [https://github.com/Lucdijord/Controle_de_Manuten_de_equipTI](https://github.com/Lucdijord/Controle_de_Manuten_de_equipTI)
-cd SEU_REPOSITORIO/ITMaintenanceManager
+- git clone [https://github.com/Lucdijord/Controle_de_Manuten_de_equipTI](https://github.com/Lucdijord/Controle_de_Manuten_de_equipTI) 
+- cd SEU_REPOSITORIO/ITMaintenanceManager
